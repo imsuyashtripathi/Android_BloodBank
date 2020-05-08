@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="suyash.tripathi.bloodbank"
+    xmlns:dist="http://schemas.android.com/apk/distribution">
+
+    <dist:module dist:instant="true" />
+    <application
+        android:name="suyash.tripathi.bloodbank.ui.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity
+            android:name="suyash.tripathi.bloodbank.ui.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="suyash.tripathi.bloodbank.ui.WelcomeActivity" />
+        <activity
+            android:name="suyash.tripathi.bloodbank.ui.RegisterActivity"
+            android:theme="@style/AppStyle" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="suyash.tripathi.bloodbank.ui.HomeActivity"
+            android:configChanges="locale"
+            android:launchMode="singleTop"
+            android:theme="@style/AppStyle" />
+        <activity
+            android:name="suyash.tripathi.bloodbank.ui.LoginActivity"
+            android:parentActivityName="suyash.tripathi.bloodbank.ui.RegisterActivity"
+            android:theme="@style/AppStyle" />
+        <activity
+            android:name="suyash.tripathi.bloodbank.ui.ShoutoutCreationActivity"
+            android:parentActivityName="suyash.tripathi.bloodbank.ui.HomeActivity"
+            android:theme="@style/AppStyle" />
+        <activity
+            android:name="suyash.tripathi.bloodbank.ui.DonateActivity"
+            android:parentActivityName="suyash.tripathi.bloodbank.ui.HomeActivity"
+            android:theme="@style/AppStyle" />
+        <activity
+            android:name="suyash.tripathi.bloodbank.ui.SearchActivity"
+            android:parentActivityName="suyash.tripathi.bloodbank.ui.HomeActivity"
+            android:theme="@style/AppStyle" />
+        <activity
+            android:name="suyash.tripathi.bloodbank.ui.SettingsActivity"
+            android:parentActivityName="suyash.tripathi.bloodbank.ui.HomeActivity"
+            android:theme="@style/settingsActivityStyle" />
+        <activity
+            android:name="suyash.tripathi.bloodbank.ui.AboutActivity"
+            android:parentActivityName="suyash.tripathi.bloodbank.ui.HomeActivity"
+            android:theme="@style/AppStyle" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>
